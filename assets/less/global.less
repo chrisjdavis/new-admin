@@ -1,0 +1,70 @@
+body {
+	margin: 0;
+	background: @background-color-default;
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+a {
+	text-decoration: none;
+}
+
+menu {
+	background: @background-color-menu;
+	padding: 0rem 3.0rem 0;
+	margin: 0;
+	position: absolute;
+	height: 100%;
+	width: 9.0rem;
+	
+	ul {
+		width: 100%;
+		float: left;
+		list-style: none;
+		padding-top: 7.0rem;
+		padding-left: 0;
+		
+		li {
+			display: inline-block;
+			text-transform: uppercase;
+			font-weight: 300;
+			width: 100%;
+			
+			a {
+				float: left;
+				color: @link-color-inactive;
+				padding: 1.0rem 0;
+			}
+					
+			a.active {
+				color: @link-color-active;
+			}
+			
+			span.update {
+				margin-top: 0.65rem;
+				margin-right: -3.25rem;
+				float: right;
+				padding: 0;
+				padding-top: 0.2rem;
+				font-size: 0.9rem;
+				line-height: 1.3rem;
+				border-radius: 0.2rem;
+				text-align: center;
+				width: 1.8rem;
+				background: #f00;
+				color: #fff;
+				font-weight: 600;
+			}
+				span.update.blue {
+					background: @update-color-blue;
+				}
+
+				span.update.red {
+					background: @update-color-red;
+				}
+				
+				span.update.green {
+					background: @update-color-green;
+				}
+		}
+	}
+}
