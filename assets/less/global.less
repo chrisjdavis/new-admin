@@ -68,3 +68,81 @@ menu {
 		}
 	}
 }
+
+section#page {
+	float: left;
+	background: #eee;
+	width: 100%;
+	height: 100vh;
+	
+	header {
+		background: @background-color-default;
+		padding: 0.7rem 1.5rem 0.5rem 15.0rem;
+		text-align: right;
+		
+		ul {
+			padding: 0;
+			margin: 0;
+			list-style: none;
+			
+			li {
+				display: inline;
+				margin-left: 0.5rem;
+				
+				a.avatar {
+					display: inline-block;
+					height: 2.25rem;
+					width: 2.25rem;
+																	
+					img {
+						height: 2.25rem;
+						width: 2.25rem;
+						border-radius: 0.2rem;
+					}
+				}
+				
+				a {
+					opacity: 0.25;
+				}
+				
+				a.site {
+					opacity: 1.0;
+					text-transform: uppercase;
+					color: #b4b4b4;
+					font-size: 0.9rem;
+					vertical-align: top;
+					margin-top: 0.8rem;
+					margin-right: 3.0rem;
+					display: inline-block;
+				}
+				
+				a.search {
+					vertical-align: top;
+					display: inline-block;
+					background: #eee;
+					width: 2.25rem;
+					text-align: center;
+					color: #666;
+					padding: 0.6rem 0;
+					border-radius: 0.2rem;
+				}
+
+				a.notif {
+					vertical-align: top;
+					display: inline-block;
+					background: @update-color-green;
+					width: 2.25rem;
+					text-align: center;
+					color: @background-color-default;
+					padding: 0.6rem 0;
+					border-radius: 0.2rem;
+				}
+			}
+		}
+	}
+	
+	header:hover > ul li a {
+		opacity: 1.0;
+		animation: all 0.2s;
+	}
+}
