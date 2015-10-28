@@ -10,6 +10,8 @@
 	<link href='https://fonts.googleapis.com/css?family=Josefin+Sans:400,100,300,600,700' rel='stylesheet' type='text/css'>
 	
 	<link type="text/css" media="screen" rel="stylesheet" href="assets/css/style.css">
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js">
 	
 	<script type="text/javascript">
 		var habari = {};
@@ -103,13 +105,9 @@
 		</div>
 		<div class="stats column half">
 			<div class="visits">12,234,312 <span class="up">+12%</span></div>
-<!--
-			<div class="soc_stats">
-				<div class="social twitter"><i class="fa fa-twitter"></i> 160</div>
-				<div class="social facebook"><i class="fa fa-facebook"></i> 65</div>
-				<div class="social linkedin"><i class="fa fa-linkedin"></i> 39</div>
+			<div style="width:70%;padding:0.5rem 2.3rem;">
+				<div><canvas id="canvas" height="250" width="600"></canvas></div>
 			</div>
--->
 		</div>
 	</section>
 	<section class="row">
@@ -122,5 +120,39 @@
 			</ul>
 		</nav>
 	</section>
+	<script>
+		var randomScalingFactor = function() { return Math.round(Math.random() * 1000000) };
+		var lineChartData = {
+			labels : ["2002","2003","2004","2005","2006","2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015"],
+			datasets : [
+				{
+					label: "Total Traffic",
+					fillColor : "rgba(220,220,220,0.2)",
+					strokeColor : "rgba(220,220,220,1)",
+					pointColor : "rgba(220,220,220,1)",
+					pointStrokeColor : "#fff",
+					pointHighlightFill : "#fff",
+					pointHighlightStroke : "rgba(220,220,220,1)",
+					data : [
+							randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),
+							randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),
+							randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),
+							randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),
+							randomScalingFactor(),randomScalingFactor()
+							]
+				},
+			]
+		}
+		
+		window.onload = function(){
+			var ctx = document.getElementById("canvas").getContext("2d");
+			window.myLine = new Chart(ctx).Line(lineChartData, {
+				responsive: true,
+				scaleShowHorizontalLines: false,
+				scaleShowVerticalLines: false,
+				scaleShowLabels: false,
+			});
+		}
+	</script>
 </body>
 </html>
